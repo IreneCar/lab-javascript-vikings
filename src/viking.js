@@ -9,12 +9,12 @@ class Soldier {
     return this.strength;
   }
 
-  receiveDamage(theDamage) {
-    this.health = this.health - this.theDamage;
+  receiveDamage(damage) {
+    this.health = this.health - this.damage;
   }
 
 }
-  
+ 
 
 // Viking
 class Viking extends Soldier {
@@ -23,13 +23,17 @@ class Viking extends Soldier {
     this.name = name;
   }
 
-  recivedDamage(theDamage){
-    this.health = this.health - this.theDamage;
+  recivedDamage(damage){
+    this.health = this.health - this.damage;
     if (this.health === 0){
       return `${this.name} has died in act of combat`;
     } else {
-      return `${this.name} has received ${this.theDamage} points of damage`;
+      return `${this.name} has received ${this.damage} points of damage`;
     }
+  }
+
+  battleCry() {
+    return "Odin Owns You All!";
   }
 
 }
@@ -37,7 +41,19 @@ class Viking extends Soldier {
 
 
 // Saxon
-class Saxon {}
+class Saxon extends Soldier{
+super(health, strength)
+
+recivedDamage(damage){
+  this.health = this.health - this.damage;
+  if (this.health === 0){
+    return `A Saxon has died in combat`;
+  } else {
+    return `A Saxon has received ${damage} points of damage`;
+  }
+}
+
+}
 
 
 //*********** BONUS ************ 
