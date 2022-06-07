@@ -42,7 +42,10 @@ class Viking extends Soldier {
 
 // Saxon
 class Saxon extends Soldier{
-super(health, strength)
+constructor(health, strength){
+  super(health, strength)
+}
+
 
 recivedDamage(damage){
   this.health = this.health - this.damage;
